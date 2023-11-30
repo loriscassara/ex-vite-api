@@ -48,6 +48,13 @@
 		margin: 0.5rem;
 		border-radius: 1rem;
 		width: 40%;
+		transition: all .55s ease;
+	}
+
+	.card:hover {
+		cursor: pointer;
+		transform: scale(0.95);
+		background-color: rgb(206, 205, 205);
 	}
 
 	#uppercase { text-transform: uppercase; }

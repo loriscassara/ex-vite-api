@@ -38,6 +38,9 @@
 -->
 
 <template>
+
+	<h1 id="title">Breweries in Scotland</h1>
+
 	<!-- start info container beers -->
 	
 	<div class="deck">
@@ -51,6 +54,13 @@
 -->
 
 <style scoped>
+
+	#title {
+		display: flex;
+		justify-content: center;
+		padding-top: 1rem;
+	}
+
 	/* start deck */
 
 	.deck {
