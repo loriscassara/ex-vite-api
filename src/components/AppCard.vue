@@ -4,7 +4,7 @@
 
 <script>
 export default {
-	name: 'AppHeader',
+	name: 'AppCard',
 	data() {
 		return {
 			
@@ -18,7 +18,7 @@ export default {
 -->
 
 <template>
-
+	contenuto
 </template>
 
 <!-- 
