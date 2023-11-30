@@ -3,28 +3,30 @@
 -->
 
 <script>
-import AppCard from './AppCard.vue'
+	
+	import AppCard from './AppCard.vue'
 
-export default {
-	name: 'AppCardDeck',
-	components: {
-		AppCard
-	},
-	data() {
-		return {
+	export default {
+		name: 'AppCardDeck',
+		components: {
+			AppCard
+		},
+		data() {
+			return {
 
-		}
-	},
-	mounted() {
+			}
+		},
+		mounted() {
 
-	},
-	methods: {
+		},
+		methods: {
 
-	},
-	props: [
-		'subject'
-	]
-}
+		},
+		props: [
+			'subject'
+		]
+	}
+
 </script>
 
 <!-- 
@@ -32,7 +34,10 @@ export default {
 -->
 
 <template>
+	<!-- start info container beers -->
+	
 	<AppCard :name = "subject.name" :location = "subject.city" :text = "subject.brewery_type" />
+
 </template>
 
 <!-- 

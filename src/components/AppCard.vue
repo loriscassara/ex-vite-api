@@ -3,19 +3,21 @@
 -->
 
 <script>
-export default {
-	name: 'AppCard',
-	data() {
-		return {
+
+	export default {
+		name: 'AppCard',
+		data() {
+			return {
 			
-		}
-	},
-	props: [
-		'name',
-		'location',
-		'text'
-	]
-}
+			}
+		},
+		props: [
+			'name',
+			'location',
+			'text'
+		]
+	}
+
 </script>
 
 <!-- 
@@ -23,7 +25,14 @@ export default {
 -->
 
 <template>
-	<div>{{ name }} {{ location }} {{ text }}</div>
+	<!-- start deck card -->
+
+	<div class="card">
+		<h1 id="uppercase">{{ name }}</h1>
+		<h3>{{ location }}</h3>
+		<p id="italic">{{ text }}</p>
+	</div>
+
 </template>
 
 <!-- 
@@ -31,5 +40,18 @@ export default {
 -->
 
 <style scoped>
+	/* start deck card */
+
+	.card {
+		background-color: gainsboro;
+		padding: 1rem;
+		margin: 0.5rem;
+		border-radius: 1rem;
+		width: 40%;
+	}
+
+	#uppercase { text-transform: uppercase; }
+
+	#italic { font-style: italic }
 
 </style>
