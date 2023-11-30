@@ -9,7 +9,12 @@ export default {
 		return {
 			
 		}
-	}
+	},
+	props: [
+		'name',
+		'location',
+		'text'
+	]
 }
 </script>
 
@@ -18,7 +23,7 @@ export default {
 -->
 
 <template>
-	contenuto
+	<div>{{ name }} {{ location }} {{ text }}</div>
 </template>
 
 <!-- 

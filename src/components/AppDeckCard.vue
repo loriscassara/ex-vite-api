@@ -6,6 +6,7 @@
 import AppCard from './AppCard.vue'
 
 export default {
+	name: 'AppCardDeck',
 	components: {
 		AppCard
 	},
@@ -19,7 +20,10 @@ export default {
 	},
 	methods: {
 
-	}
+	},
+	props: [
+		'subject'
+	]
 }
 </script>
 
@@ -28,7 +32,7 @@ export default {
 -->
 
 <template>
-	<AppCard/>
+	<AppCard :name = "subject.name" :location = "subject.city" :text = "subject.brewery_type" />
 </template>
 
 <!-- 
