@@ -7,15 +7,19 @@
 	import axios from 'axios' //axios import
 	import AppCard from './components/AppCard.vue' //AppCard import
 	import AppDeckCard from './components/AppDeckCard.vue' //AppDeckCard import
+	import AppSearch from './components/AppSearch.vue' //AppSearch import
+	import { store } from './store.js' //store import
 
 	export default {
 		components: {
 			AppCard,
-			AppDeckCard
+			AppDeckCard,
+			AppSearch
 		},
 		data() {
 			return {
-				beers: ''
+				beers: '',
+				store
 			}
 		},
 		mounted() {
@@ -23,10 +27,18 @@
 		},
 		methods: {
 			connectBeer() {
-				axios.get(`https://api.openbrewerydb.org/v1/breweries?by_country=scotland&per_page=10`).then(result => {
-					//console.log(result.data);
-					this.beers = result.data;
-				});
+				let address = this.store.urlApi;
+
+				if (this.store.srString.length) {
+					address = `${this.address.urlApi}&by_postal=${this.store.srString}&per_page=10`;
+					axios.get(`${address} `).then(result => {
+						this.beers = result.data;
+					});
+				} else {
+					axios.get(`${address}&per_page=10`).then(result => {
+						this.beers = result.data;
+					})
+				}
 			}
 		}
 	}
@@ -40,6 +52,10 @@
 <template>
 
 	<h1 id="title">Breweries in Scotland</h1>
+
+	<!-- start input beers -->
+
+	<AppSearch @search = "connectBeer" />
 
 	<!-- start info container beers -->
 	
